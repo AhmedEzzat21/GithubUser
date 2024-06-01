@@ -305,8 +305,8 @@
 		0681CB182C09F94F00CB3337 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0681CB432C09FC9D00CB3337 /* UserDetails */,
 				0681CB192C09F95900CB3337 /* Users */,
+				0681CB432C09FC9D00CB3337 /* UserDetails */,
 			);
 			path = UI;
 			sourceTree = "<group>";
