@@ -1,5 +1,5 @@
 //
-//  Repo.swift
+//  UserRepoItemViewModel.swift
 //  githHubUser
 //
 //  Created by Ahmed Ezzat on 31/05/2024.
@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct Repo {
-    var id: Int?
-    var name: String?
+struct UserRepoItemViewModel {
+    var title: String?
     var description: String?
     var forks_url: String?
 }

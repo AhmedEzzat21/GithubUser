@@ -13,6 +13,8 @@
 		0647869A2C093BFB004E0D1A /* githHubUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064786992C093BFB004E0D1A /* githHubUserTests.swift */; };
 		064786A42C093BFB004E0D1A /* githHubUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064786A32C093BFB004E0D1A /* githHubUserUITests.swift */; };
 		064786A62C093BFB004E0D1A /* githHubUserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064786A52C093BFB004E0D1A /* githHubUserUITestsLaunchTests.swift */; };
+		0677ABE82C0BD91400C52DDD /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0677ABE62C0BD91400C52DDD /* RepoTableViewCell.swift */; };
+		0677ABE92C0BD91400C52DDD /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0677ABE72C0BD91400C52DDD /* RepoTableViewCell.xib */; };
 		0681CAF32C09F62900CB3337 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681CAF22C09F62900CB3337 /* AppDIContainer.swift */; };
 		0681CAF62C09F69100CB3337 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681CAF52C09F69100CB3337 /* AppFlowCoordinator.swift */; };
 		0681CAF82C09F6A700CB3337 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681CAF72C09F6A700CB3337 /* AppAppearance.swift */; };
@@ -88,6 +90,8 @@
 		0647869F2C093BFB004E0D1A /* githHubUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = githHubUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		064786A32C093BFB004E0D1A /* githHubUserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githHubUserUITests.swift; sourceTree = "<group>"; };
 		064786A52C093BFB004E0D1A /* githHubUserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githHubUserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0677ABE62C0BD91400C52DDD /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		0677ABE72C0BD91400C52DDD /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		0681CAF22C09F62900CB3337 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		0681CAF52C09F69100CB3337 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		0681CAF72C09F6A700CB3337 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
@@ -213,6 +217,15 @@
 				064786A52C093BFB004E0D1A /* githHubUserUITestsLaunchTests.swift */,
 			);
 			path = githHubUserUITests;
+			sourceTree = "<group>";
+		};
+		0677ABE32C0BD8D400C52DDD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0677ABE62C0BD91400C52DDD /* RepoTableViewCell.swift */,
+				0677ABE72C0BD91400C52DDD /* RepoTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		0681CAF12C09F60E00CB3337 /* DIContainers */ = {
@@ -414,6 +427,7 @@
 		0681CB442C09FCA200CB3337 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0677ABE32C0BD8D400C52DDD /* Cells */,
 				0681CB4D2C09FD0D00CB3337 /* UserDetailsViewController.swift */,
 				0681CB4E2C09FD0D00CB3337 /* UserDetailsViewController.xib */,
 			);
@@ -594,6 +608,7 @@
 				0681CB212C09F9D700CB3337 /* UsersViewController.xib in Resources */,
 				0647868F2C093BFB004E0D1A /* Base in Resources */,
 				0681CB552C09FD7700CB3337 /* UserTableViewCell.xib in Resources */,
+				0677ABE92C0BD91400C52DDD /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +648,7 @@
 				0681CB0B2C09F87700CB3337 /* Endpoint.swift in Sources */,
 				0681CB542C09FD7700CB3337 /* UserTableViewCell.swift in Sources */,
 				0681CB4F2C09FD0D00CB3337 /* UserDetailsViewController.swift in Sources */,
+				0677ABE82C0BD91400C52DDD /* RepoTableViewCell.swift in Sources */,
 				0681CB6C2C09FEE200CB3337 /* UserRepoDTO.swift in Sources */,
 				0681CB672C09FEA600CB3337 /* APIEndpoints.swift in Sources */,
 				0681CB332C09FB7600CB3337 /* UsersRepository.swift in Sources */,
