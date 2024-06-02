@@ -60,6 +60,10 @@
 		0681CB6A2C09FED900CB3337 /* UsersResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681CB692C09FED900CB3337 /* UsersResponseDTO.swift */; };
 		0681CB6C2C09FEE200CB3337 /* UserRepoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0681CB6B2C09FEE200CB3337 /* UserRepoDTO.swift */; };
 		0681CB6F2C0A04B500CB3337 /* GithubUsers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0681CB6D2C0A04B500CB3337 /* GithubUsers.xcdatamodeld */; };
+		06EE5CD42C0D22C0005C4B35 /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE5CD32C0D22C0005C4B35 /* UsersViewModelTests.swift */; };
+		06EE5CD62C0D22E7005C4B35 /* MockUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE5CD52C0D22E7005C4B35 /* MockUsersUseCase.swift */; };
+		06EE5CD82C0D22F6005C4B35 /* MockImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE5CD72C0D22F6005C4B35 /* MockImagesRepository.swift */; };
+		06EE5CDA2C0D246F005C4B35 /* MockCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EE5CD92C0D246F005C4B35 /* MockCancellable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,10 @@
 		0681CB692C09FED900CB3337 /* UsersResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponseDTO.swift; sourceTree = "<group>"; };
 		0681CB6B2C09FEE200CB3337 /* UserRepoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepoDTO.swift; sourceTree = "<group>"; };
 		0681CB6E2C0A04B500CB3337 /* GithubUsers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubUsers.xcdatamodel; sourceTree = "<group>"; };
+		06EE5CD32C0D22C0005C4B35 /* UsersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModelTests.swift; sourceTree = "<group>"; };
+		06EE5CD52C0D22E7005C4B35 /* MockUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUsersUseCase.swift; sourceTree = "<group>"; };
+		06EE5CD72C0D22F6005C4B35 /* MockImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagesRepository.swift; sourceTree = "<group>"; };
+		06EE5CD92C0D246F005C4B35 /* MockCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCancellable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +214,10 @@
 			isa = PBXGroup;
 			children = (
 				064786992C093BFB004E0D1A /* githHubUserTests.swift */,
+				06EE5CD32C0D22C0005C4B35 /* UsersViewModelTests.swift */,
+				06EE5CD52C0D22E7005C4B35 /* MockUsersUseCase.swift */,
+				06EE5CD92C0D246F005C4B35 /* MockCancellable.swift */,
+				06EE5CD72C0D22F6005C4B35 /* MockImagesRepository.swift */,
 			);
 			path = githHubUserTests;
 			sourceTree = "<group>";
@@ -685,6 +697,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0647869A2C093BFB004E0D1A /* githHubUserTests.swift in Sources */,
+				06EE5CD82C0D22F6005C4B35 /* MockImagesRepository.swift in Sources */,
+				06EE5CD42C0D22C0005C4B35 /* UsersViewModelTests.swift in Sources */,
+				06EE5CDA2C0D246F005C4B35 /* MockCancellable.swift in Sources */,
+				06EE5CD62C0D22E7005C4B35 /* MockUsersUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
