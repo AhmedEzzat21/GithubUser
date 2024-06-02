@@ -24,12 +24,17 @@ public final class Observable<Value> {
         self.value = value
     }
     
-    public func observe(on observer: AnyObject, observerBlock: @escaping (Value) -> Void) {
+    public func observe(
+        on observer: AnyObject,
+        observerBlock: @escaping (Value) -> Void
+    ) {
         observers.append(Observer(observer: observer, block: observerBlock))
         DispatchQueue.main.async { observerBlock(self.value) }
     }
     
-    public func remove(observer: AnyObject) {
+    public func remove(
+        observer: AnyObject
+    ) {
         observers = observers.filter { $0.observer !== observer }
     }
     

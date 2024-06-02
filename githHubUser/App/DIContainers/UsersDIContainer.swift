@@ -25,11 +25,11 @@ final class UsersSceneDIContainer: UsersFlowCoordinatorDependencies {
     
     // MARK: - Use Cases
     func makeUsersUseCase() -> UsersUseCase {
-        return DefaultUsersUseCase(usersRepository: makeUsersRepository())
+        return UsersUseCaseImpl(usersRepository: makeUsersRepository())
     }
     
     func makeUserDetailsUseCase() -> UserDetailsUseCase {
-        return DefaultUserDetailsUseCase(usersRepository: makeUsersRepository())
+        return UserDetailsUseCaseImpl(usersRepository: makeUsersRepository())
     }
     
     // MARK: - Repositories
@@ -42,27 +42,37 @@ final class UsersSceneDIContainer: UsersFlowCoordinatorDependencies {
     }
     
     // MARK: - Users
-    func makeUsersViewController(closures: UsersViewModelClosures) -> UsersViewController {
+    func makeUsersViewController(
+        closures: UsersViewModelClosures
+    ) -> UsersViewController {
         return UsersViewController.create(with: makeUsersViewModel(closures: closures))
     }
     
-    func makeUsersViewModel(closures: UsersViewModelClosures) -> UsersViewModel {
+    func makeUsersViewModel(
+        closures: UsersViewModelClosures
+    ) -> UsersViewModel {
         return UsersViewModel(usersUseCase: makeUsersUseCase(),
                               imagesRepository: makeImagesRepository(),
                                           closures: closures)
     }
     
     // MARK: - User Details
-    func makeUserDetailsViewController(user: User) -> UserDetailsViewController {
+    func makeUserDetailsViewController(
+        user: User
+    ) -> UserDetailsViewController {
         return UserDetailsViewController.create(with: makeUserDetailsViewModel(user: user))
     }
 
-    func makeUserDetailsViewModel(user: User) -> UserDetailsViewModel {
+    func makeUserDetailsViewModel(
+        user: User
+    ) -> UserDetailsViewModel {
         return UserDetailsViewModel(user: user, useCase: makeUserDetailsUseCase())
     }
 
     // MARK: - Flow Coordinators
-    func makeUsersFlowCoordinator(navigationController: UINavigationController) -> UsersFlowCoordinator {
+    func makeUsersFlowCoordinator(
+        navigationController: UINavigationController
+    ) -> UsersFlowCoordinator {
         return UsersFlowCoordinator(navigationController: navigationController,
                                     dependencies: self)
     }

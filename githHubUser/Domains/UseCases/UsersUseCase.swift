@@ -8,19 +8,27 @@
 import Foundation
 
 protocol UsersUseCase {
-    func fetch(cached: @escaping ([User]) -> Void,
-                 completion: @escaping (Result<[User], Error>) -> Void) -> Cancellable?
-    func search(query: UserQuery, completion: @escaping (Result<[User], Error>) -> Void) -> Cancellable?
+    func fetch(
+        cached: @escaping ([User]) -> Void,
+        completion: @escaping (Result<[User], Error>) -> Void
+    ) -> Cancellable?
+    func search(
+        query: UserQuery,
+        completion: @escaping (Result<[User], Error>) -> Void
+    ) -> Cancellable?
 }
 
-final class DefaultUsersUseCase: UsersUseCase {
+final class UsersUseCaseImpl: UsersUseCase {
     private let usersRepository: UsersRepository
-
+    
     init(usersRepository: UsersRepository) {
         self.usersRepository = usersRepository
     }
     
-    func fetch(cached: @escaping ([User]) -> Void, completion: @escaping (Result<[User], Error>) -> Void) -> Cancellable? {
+    func fetch(
+        cached: @escaping ([User]) -> Void,
+        completion: @escaping (Result<[User], Error>) -> Void
+    ) -> Cancellable? {
         return usersRepository.fetchUsers { (users) in
             cached(users)
         } completion: { (result) in
@@ -28,7 +36,10 @@ final class DefaultUsersUseCase: UsersUseCase {
         }
     }
     
-    func search(query: UserQuery, completion: @escaping (Result<[User], Error>) -> Void) -> Cancellable? {
+    func search(
+        query: UserQuery,
+        completion: @escaping (Result<[User], Error>) -> Void
+    ) -> Cancellable? {
         return usersRepository.searchUsers(query: query) { (result) in
             completion(result)
         }

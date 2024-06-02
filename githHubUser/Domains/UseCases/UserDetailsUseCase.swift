@@ -28,7 +28,7 @@ protocol UserDetailsUseCase {
     
 }
 
-final class DefaultUserDetailsUseCase: UserDetailsUseCase {
+final class UserDetailsUseCaseImpl: UserDetailsUseCase {
     private let usersRepository: UsersRepository
 
     init(usersRepository: UsersRepository) {

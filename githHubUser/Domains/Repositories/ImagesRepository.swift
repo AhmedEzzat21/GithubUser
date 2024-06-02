@@ -8,5 +8,8 @@
 import Foundation
 
 protocol ImagesRepository {
-    func fetchImage(for user: User, completion: @escaping (Result<Data, Error>) -> Void) -> Cancellable?
+    func fetchImage(
+        for user: User,
+        completion: @escaping (Result<Data, Error>) -> Void
+    ) -> Cancellable?
 }

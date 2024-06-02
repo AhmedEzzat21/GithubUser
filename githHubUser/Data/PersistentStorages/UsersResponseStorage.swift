@@ -35,7 +35,10 @@ final class CoreDataUsersStorage {
         }
     }
 
-    private func deleteRepos(for user: UserDTO, in context: NSManagedObjectContext) {
+    private func deleteRepos(
+        for user: UserDTO,
+        in context: NSManagedObjectContext
+    ) {
         let request = fetchRequest()
         do {
             if let result = try context.fetch(request).first(where: { $0.id == Int64(user.id ?? 0) }) {
@@ -46,7 +49,10 @@ final class CoreDataUsersStorage {
         }
     }
     
-    private func deleteFollowers(for user: UserDTO, in context: NSManagedObjectContext) {
+    private func deleteFollowers(
+        for user: UserDTO,
+        in context: NSManagedObjectContext
+    ) {
         let request = fetchRequest()
         do {
             if let result = try context.fetch(request).first(where: { $0.id == Int64(user.id ?? 0) }) {
@@ -57,7 +63,10 @@ final class CoreDataUsersStorage {
         }
     }
     
-    private func deleteFollowing(for user: UserDTO, in context: NSManagedObjectContext) {
+    private func deleteFollowing(
+        for user: UserDTO,
+        in context: NSManagedObjectContext
+    ) {
         let request = fetchRequest()
         do {
             if let result = try context.fetch(request).first(where: { $0.id == Int64(user.id ?? 0) }) {
@@ -71,7 +80,10 @@ final class CoreDataUsersStorage {
 
 extension CoreDataUsersStorage: UsersResponseStorage {
     //MARK: -Get
-    func getRepos(for user: UserDTO, completion: @escaping (Result<[UserRepoDTO]?, CoreDataStorageError>) -> Void) {
+    func getRepos(
+        for user: UserDTO,
+        completion: @escaping (Result<[UserRepoDTO]?, CoreDataStorageError>) -> Void
+    ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 let request = self.fetchRequest(user: user)
@@ -85,7 +97,10 @@ extension CoreDataUsersStorage: UsersResponseStorage {
         }
     }
     
-    func getFollowers(for user: UserDTO, completion: @escaping (Result<[UserDTO]?, CoreDataStorageError>) -> Void) {
+    func getFollowers(
+        for user: UserDTO,
+        completion: @escaping (Result<[UserDTO]?, CoreDataStorageError>) -> Void
+    ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 let request = self.fetchRequest(user: user)
@@ -99,7 +114,10 @@ extension CoreDataUsersStorage: UsersResponseStorage {
         }
     }
     
-    func getFollowing(for user: UserDTO, completion: @escaping (Result<[UserDTO]?, CoreDataStorageError>) -> Void) {
+    func getFollowing(
+        for user: UserDTO,
+        completion: @escaping (Result<[UserDTO]?, CoreDataStorageError>) -> Void
+    ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 let request = self.fetchRequest(user: user)
@@ -113,7 +131,9 @@ extension CoreDataUsersStorage: UsersResponseStorage {
         }
     }
     
-    func getResponse(completion: @escaping (Result<[UserDTO]?, CoreDataStorageError>) -> Void) {
+    func getResponse(
+        completion: @escaping (Result<[UserDTO]?, CoreDataStorageError>) -> Void
+    ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 let request = self.fetchRequest()
@@ -127,7 +147,10 @@ extension CoreDataUsersStorage: UsersResponseStorage {
     }
     
     //MARK: -Save
-    func saveRepos(repos: [UserRepoDTO], for user: UserDTO) {
+    func saveRepos(
+        repos: [UserRepoDTO],
+        for user: UserDTO
+    ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 self.deleteRepos(for: user, in: context)
@@ -147,7 +170,10 @@ extension CoreDataUsersStorage: UsersResponseStorage {
         }
     }
     
-    func saveFollowers(followers: [UserDTO], for user: UserDTO) {
+    func saveFollowers(
+        followers: [UserDTO],
+        for user: UserDTO
+    ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 self.deleteFollowers(for: user, in: context)
@@ -167,7 +193,10 @@ extension CoreDataUsersStorage: UsersResponseStorage {
         }
     }
     
-    func saveFollowing(following: [UserDTO], for user: UserDTO) {
+    func saveFollowing(
+        following: [UserDTO],
+        for user: UserDTO
+    ) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 self.deleteFollowing(for: user, in: context)
