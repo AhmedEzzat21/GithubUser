@@ -26,11 +26,11 @@ class UserDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDIdLoad()
+        imageView.layer.cornerRadius = 30
+        imageView.clipsToBounds = true
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "RepoTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoTableViewCell")
-        tableView.estimatedRowHeight = 85.0
-        tableView.rowHeight = UITableView.automaticDimension
         bind(to: viewModel)
     }
 
@@ -51,7 +51,7 @@ class UserDetailsViewController: UIViewController {
             self.followersLabel.text =  "Followers: \(followers)"
         }
         viewModel.title.observe(on: self) { [unowned self] (title) in
-            self.loginName.text =  "User Name: \(title)"
+            self.loginName.text =  "Name: \(title)"
         }
         viewModel.error.observe(on: self) { [unowned self] (error) in
             if let err = error {
@@ -71,13 +71,13 @@ extension UserDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         cell.config(userRepoItemViewModel: repos[indexPath.row])
         return cell
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let safeUrlStr = self.repos[ indexPath.row].forks_url {
-//            if let safeUrl = URL(string: safeUrlStr) {
-//                UIApplication.shared.open(safeUrl)
-//            }
-//        }
-//        self.tableView.deselectRow(at: indexPath, animated: true);
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let safeUrlStr = self.repos[indexPath.row].forks_url {
+            if let safeUrl = URL(string: safeUrlStr) {
+                UIApplication.shared.open(safeUrl)
+            }
+        }
+        self.tableView.deselectRow(at: indexPath, animated: true);
+    }
 }
 

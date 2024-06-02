@@ -33,8 +33,7 @@ final class UsersViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
-        tableView.estimatedRowHeight = 85.0
-        tableView.rowHeight = UITableView.automaticDimension
+       // tableView.rowHeight = UITableView.automaticDimension
 
         
         bind(to: viewModel)

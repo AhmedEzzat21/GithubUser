@@ -11,5 +11,5 @@ struct Repo {
     var id: Int?
     var name: String?
     var description: String?
-    var forks_url: String?
+    let forks_url: String?
 }

@@ -14,17 +14,22 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var avatar: UIImageView!
 
     func config(userItemViewModel: UserItemViewModel) {
+        confiUI()
         if let image = userItemViewModel.user?.image {
             self.avatar?.image = UIImage(data: image)
         }
         if let userName = userItemViewModel.user?.login {
-            self.usernameLbl?.text =  "User Name: \(userName)"
+            self.usernameLbl?.text =  "Name: \(userName)"
         }
         if let repoNumber = userItemViewModel.user?.reposURL?.count {
-            self.repoNumLbl?.text = "Number of public repositories: \(repoNumber)"
+            self.repoNumLbl?.text = "Repositories: \(repoNumber)"
         }
         if let followers = userItemViewModel.user?.followersURL?.count {
             self.followersLbl?.text = "Followers: \(followers)"
         }
+    }
+    func confiUI(){
+        avatar.layer.cornerRadius = 25
+        avatar.clipsToBounds = true
     }
 }

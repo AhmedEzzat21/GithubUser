@@ -13,12 +13,13 @@ struct UserRepoDTO: Decodable {
     var id: Int?
     var name: String?
     var description: String?
+    var forks_url: String?
 }
 
 //MARK: - Domain To Mapping
 extension Repo {
     func toDTO() -> UserRepoDTO {
-        return .init(id: id, name: name, description: description)
+        return .init(id: id, name: name, description: description, forks_url: forks_url)
     }
 }
 
@@ -27,7 +28,7 @@ extension UserRepoDTO {
     func mapToDomain() -> Repo {
         return .init(id: id,
                      name: name,
-                     description: description)
+                     description: description, forks_url: forks_url)
     }
 }
 
@@ -38,6 +39,7 @@ extension UserRepoDTO {
         entity.id = Int64(id!)
         entity.name = name
         entity.descriptionn = description
+        entity.forks_url = forks_url
         return entity
     }
 }
@@ -47,6 +49,6 @@ extension UserRepoEntity {
     func toDTO() -> UserRepoDTO {
         return .init(id: Int(id),
                      name: name,
-                     description: descriptionn)
+                     description: descriptionn,forks_url: forks_url)
     }
 }
