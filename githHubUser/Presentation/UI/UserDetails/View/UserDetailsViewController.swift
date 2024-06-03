@@ -71,13 +71,13 @@ extension UserDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         cell.config(userRepoItemViewModel: repos[indexPath.row])
         return cell
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let safeUrlStr = self.repos[indexPath.row].forks_url {
-//            if let safeUrl = URL(string: safeUrlStr) {
-//                UIApplication.shared.open(safeUrl)
-//            }
-//        }
-//        self.tableView.deselectRow(at: indexPath, animated: true);
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let safeUrlStr = self.repos[indexPath.row].html_url {
+            if let safeUrl = URL(string: safeUrlStr) {
+                UIApplication.shared.open(safeUrl)
+            }
+        }
+        self.tableView.deselectRow(at: indexPath, animated: true);
+    }
 }
 

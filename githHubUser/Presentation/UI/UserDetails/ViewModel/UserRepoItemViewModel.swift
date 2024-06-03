@@ -10,5 +10,5 @@ import Foundation
 struct UserRepoItemViewModel {
     var title: String?
     var description: String?
-    var forks_url: String?
+    var html_url: String?
 }

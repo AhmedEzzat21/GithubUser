@@ -75,11 +75,11 @@ class UserDetailsViewModel {
     
     private func fetchRepos() {
         let _ = useCase.fetchRepos(for: user) { [weak self] (repos) in
-            self?.repos.value = repos.map({ UserRepoItemViewModel(title: $0.name, description: $0.description, forks_url: $0.forks_url) })
+            self?.repos.value = repos.map({ UserRepoItemViewModel(title: $0.name, description: $0.description, html_url: $0.html_url) })
         } completion: { [weak self] (result) in
             switch result {
             case .success(let repos):
-                self?.repos.value = repos.map({ UserRepoItemViewModel(title: $0.name, description: $0.description, forks_url: $0.forks_url) })
+                self?.repos.value = repos.map({ UserRepoItemViewModel(title: $0.name, description: $0.description, html_url: $0.html_url) })
             case .failure(let error):
                 self?.error.value = error.localizedDescription
             }
