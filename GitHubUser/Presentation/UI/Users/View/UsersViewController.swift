@@ -87,7 +87,7 @@ extension UsersViewController {
         searchController.searchBar.placeholder = viewModel.searchBarPlaceholder
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.translatesAutoresizingMaskIntoConstraints = true
-        searchController.searchBar.barStyle = .default
+        searchController.searchBar.barStyle = .black
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.frame = searchBarContainer.bounds
         searchController.searchBar.autoresizingMask = [.flexibleWidth]
@@ -106,7 +106,7 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserTableViewCell
         cell.config(userItemViewModel: items[indexPath.row])
-        //cell.set(userItemViewModel: items[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
 

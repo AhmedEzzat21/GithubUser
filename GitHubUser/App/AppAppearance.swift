@@ -10,9 +10,9 @@ import UIKit
 
 class AppAppearance {
     static func setupAppearance() {
-        UINavigationBar.appearance().barTintColor = .black
-        UINavigationBar.appearance().tintColor = .black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        UINavigationBar.appearance().barTintColor = .gray
+        UINavigationBar.appearance().tintColor = .gray
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
     }
 }
 
